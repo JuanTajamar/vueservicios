@@ -1,23 +1,14 @@
 <template>
-      <!-- <CochesComponent/> -->
-       <!-- <CustomersComponent/> -->
-        <!-- <EmpleadoDetails/> -->
-    <MenuComponent/>
-    <router-view></router-view>
+  <MenuComponent/>
+  <router-view></router-view>
 </template>
 
 <script>
-// import CochesComponent from './components/CochesComponent.vue'
-// import CustomersComponent from './components/CustomersComponent.vue';
-// import EmpleadoDetails from './components/EmpleadoDetails.vue';
 import MenuComponent from './components/MenuComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    // CochesComponent
-    // CustomersComponent
-    // EmpleadoDetails
     MenuComponent
   }
 }
@@ -30,6 +21,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 </style>

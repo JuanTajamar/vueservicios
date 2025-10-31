@@ -12,10 +12,12 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Global from '../Global';
+// import axios from 'axios';
+// import Global from '../Global';
+import ServiceCoches from './../services/ServiceCoches';
+const service = new ServiceCoches()
 // Si necesitamos variables para todo el component y sus metodos se declaran aqui (mounted, methods, create)
-let urlApi = Global.urlCoches
+// let urlApi = Global.urlCoches
     export default {
         name: "CochesComponent",
         data() {
@@ -23,12 +25,17 @@ let urlApi = Global.urlCoches
                 coches: []
             }
         }, mounted() {
-            let request = "webresources/coches";
-            // Las variables declaradas fuera de export no utilizan "this"
-            let url = urlApi + request
-            axios.get(url).then(response => {
-                this.coches = response.data
-            })
+            // let request = "webresources/coches";
+            // // Las variables declaradas fuera de export no utilizan "this"
+            // let url = urlApi + request
+            // axios.get(url).then(response => {
+            //     this.coches = response.data
+            // })
+
+            // Una promesa no es un metodo, es un objeto
+            service.getCoches().then(result => {
+                this.coches = result
+            }); 
         }
     }
 </script>
